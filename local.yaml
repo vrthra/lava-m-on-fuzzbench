@@ -1,0 +1,12 @@
+trials: 2
+max_total_time: 1200
+docker_registry: gcr.io/fuzzbench
+
+# The local experiment folder that will store most of the experiment data.
+# Please use an absolute path.
+experiment_filestore: /tmp/experiment-data
+
+# The local report folder where HTML reports and summary data will be stored.
+# Please use an absolute path.
+report_filestore: /tmp/report-data
+local_experiment: true

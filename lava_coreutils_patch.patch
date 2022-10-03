@@ -1,0 +1,490 @@
+diff --git a/lib/config.h b/lib/config.h
+index 68b6763..6b8f4ad 100644
+--- a/lib/config.h
++++ b/lib/config.h
+@@ -178,7 +178,7 @@
+ 
+ /* Define this to 'void' or 'struct timezone' to match the system's
+    declaration of the second argument to gettimeofday. */
+-#define GETTIMEOFDAY_TIMEZONE struct timezone
++#define GETTIMEOFDAY_TIMEZONE void
+ 
+ /* Define to 1 if getxattr works with XATTR_NAME_POSIX_ACL_ACCESS and
+    XATTR_NAME_POSIX_ACL_DEFAULT. */
+@@ -774,7 +774,7 @@
+ /* #undef HAVE_ACL_CREATE_ENTRY_NP */
+ 
+ /* Define to 1 if you have the `acl_delete_def_file' function. */
+-#define HAVE_ACL_DELETE_DEF_FILE 1
++/* #undef HAVE_ACL_DELETE_DEF_FILE */
+ 
+ /* Define to 1 if you have the `acl_delete_fd_np' function. */
+ /* #undef HAVE_ACL_DELETE_FD_NP */
+@@ -783,40 +783,40 @@
+ /* #undef HAVE_ACL_DELETE_FILE_NP */
+ 
+ /* Define to 1 if you have the `acl_entries' function. */
+-#define HAVE_ACL_ENTRIES 1
++/* #undef HAVE_ACL_ENTRIES */
+ 
+ /* Define to 1 if you have the `acl_extended_file' function. */
+-#define HAVE_ACL_EXTENDED_FILE 1
++/* #undef HAVE_ACL_EXTENDED_FILE */
+ 
+ /* Define to 1 if the constant ACL_FIRST_ENTRY exists. */
+-#define HAVE_ACL_FIRST_ENTRY 1
++/* #undef HAVE_ACL_FIRST_ENTRY */
+ 
+ /* Define to 1 if you have the `acl_free' function. */
+-#define HAVE_ACL_FREE 1
++/* #undef HAVE_ACL_FREE */
+ 
+ /* Define to 1 if you have the `acl_free_text' function. */
+ /* #undef HAVE_ACL_FREE_TEXT */
+ 
+ /* Define to 1 if you have the `acl_from_mode' function. */
+-#define HAVE_ACL_FROM_MODE 1
++/* #undef HAVE_ACL_FROM_MODE */
+ 
+ /* Define to 1 if you have the `acl_from_text' function. */
+-#define HAVE_ACL_FROM_TEXT 1
++/* #undef HAVE_ACL_FROM_TEXT */
+ 
+ /* Define to 1 if you have the `acl_get_fd' function. */
+-#define HAVE_ACL_GET_FD 1
++/* #undef HAVE_ACL_GET_FD */
+ 
+ /* Define to 1 if you have the `acl_get_file' function. */
+-#define HAVE_ACL_GET_FILE 1
++/* #undef HAVE_ACL_GET_FILE */
+ 
+ /* Define to 1 if you have the <acl/libacl.h> header file. */
+-#define HAVE_ACL_LIBACL_H 1
++/* #undef HAVE_ACL_LIBACL_H */
+ 
+ /* Define to 1 if you have the `acl_set_fd' function. */
+-#define HAVE_ACL_SET_FD 1
++/* #undef HAVE_ACL_SET_FD */
+ 
+ /* Define to 1 if you have the `acl_set_file' function. */
+-#define HAVE_ACL_SET_FILE 1
++/* #undef HAVE_ACL_SET_FILE */
+ 
+ /* Define to 1 if you have the `acl_to_short_text' function. */
+ /* #undef HAVE_ACL_TO_SHORT_TEXT */
+@@ -842,13 +842,13 @@
+ #define HAVE_ARPA_INET_H 1
+ 
+ /* Define to 1 if you have the `attr_copy_file' function. */
+-#define HAVE_ATTR_COPY_FILE 1
++/* #undef HAVE_ATTR_COPY_FILE */
+ 
+ /* Define to 1 if you have the <attr/error_context.h> header file. */
+-#define HAVE_ATTR_ERROR_CONTEXT_H 1
++/* #undef HAVE_ATTR_ERROR_CONTEXT_H */
+ 
+ /* Define to 1 if you have the <attr/libattr.h> header file. */
+-#define HAVE_ATTR_LIBATTR_H 1
++/* #undef HAVE_ATTR_LIBATTR_H */
+ 
+ /* Define to 1 if you have the <bp-sym.h> header file. */
+ /* #undef HAVE_BP_SYM_H */
+@@ -864,7 +864,7 @@
+ 
+ /* Define to 1 if your system has a GNU libc compatible 'calloc' function, and
+    to 0 otherwise. */
+-#define HAVE_CALLOC_GNU 0
++#define HAVE_CALLOC_GNU 1
+ 
+ /* Define if the 'calloc' function is POSIX compliant. */
+ #define HAVE_CALLOC_POSIX 1
+@@ -873,7 +873,7 @@
+ #define HAVE_CANONICALIZE_FILE_NAME 1
+ 
+ /* libcap usability */
+-#define HAVE_CAP 1
++/* #undef HAVE_CAP */
+ 
+ /* Define to 1 if you have the `catgets' function. */
+ #define HAVE_CATGETS 1
+@@ -1144,7 +1144,7 @@
+ 
+ /* Define to 1 if you have the declaration of `mpz_inits', and to 0 if you
+    don't. */
+-#define HAVE_DECL_MPZ_INITS 1
++/* #undef HAVE_DECL_MPZ_INITS */
+ 
+ /* Define to 1 if you have the declaration of `program_invocation_name', and
+    to 0 if you don't. */
+@@ -1476,10 +1476,10 @@
+ #define HAVE_GETUSERSHELL 1
+ 
+ /* Define if you have GNU libgmp (or replacement) */
+-#define HAVE_GMP 1
++/* #undef HAVE_GMP */
+ 
+ /* Define to 1 if you have the <gmp.h> header file. */
+-#define HAVE_GMP_H 1
++/* #undef HAVE_GMP_H */
+ 
+ /* Define to 1 if you have the <grp.h> header file. */
+ #define HAVE_GRP_H 1
+@@ -1508,7 +1508,7 @@
+ /* Define to 1 if the compiler supports one of the keywords 'inline',
+    '__inline__', '__inline' and effectively inlines functions marked as such.
+    */
+-/* #undef HAVE_INLINE */
++#define HAVE_INLINE 1
+ 
+ /* Define to 1 if you have usable inotify support. */
+ #define HAVE_INOTIFY 1
+@@ -1548,10 +1548,10 @@
+ #define HAVE_ISNAND_IN_LIBC 1
+ 
+ /* Define if the isnan(float) function is available in libc. */
+-/* #undef HAVE_ISNANF_IN_LIBC */
++#define HAVE_ISNANF_IN_LIBC 1
+ 
+ /* Define if the isnan(long double) function is available in libc. */
+-/* #undef HAVE_ISNANL_IN_LIBC */
++#define HAVE_ISNANL_IN_LIBC 1
+ 
+ /* Define to 1 if you have the `issetugid' function. */
+ /* #undef HAVE_ISSETUGID */
+@@ -1658,7 +1658,7 @@
+ #define HAVE_MAP_ANONYMOUS 1
+ 
+ /* Define to 1 if you have the `matchpathcon_init_prefix' function. */
+-#define HAVE_MATCHPATHCON_INIT_PREFIX 1
++/* #undef HAVE_MATCHPATHCON_INIT_PREFIX */
+ 
+ /* Define to 1 if you have the <math.h> header file. */
+ #define HAVE_MATH_H 1
+@@ -1710,7 +1710,7 @@
+ #define HAVE_MNTENT_H 1
+ 
+ /* Define to 1 if you have the `mode_to_security_class' function. */
+-#define HAVE_MODE_TO_SECURITY_CLASS 1
++/* #undef HAVE_MODE_TO_SECURITY_CLASS */
+ 
+ /* Define to 1 if you have the `mprotect' function. */
+ #define HAVE_MPROTECT 1
+@@ -1884,13 +1884,13 @@
+ #define HAVE_SECURE_GETENV 1
+ 
+ /* Define to 1 if you have the <selinux/context.h> header file. */
+-#define HAVE_SELINUX_CONTEXT_H 1
++/* #undef HAVE_SELINUX_CONTEXT_H */
+ 
+ /* Define to 1 if you have the <selinux/flask.h> header file. */
+-#define HAVE_SELINUX_FLASK_H 1
++/* #undef HAVE_SELINUX_FLASK_H */
+ 
+ /* Define to 1 if you have the <selinux/selinux.h> header file. */
+-#define HAVE_SELINUX_SELINUX_H 1
++#define HAVE_SELINUX_SELINUX_H 0
+ 
+ /* Define to 1 if you have the `setdtablesize' function. */
+ /* #undef HAVE_SETDTABLESIZE */
+@@ -1977,7 +1977,7 @@
+ #define HAVE_STDLIB_H 1
+ 
+ /* Define to 1 if you have the `stime' function. */
+-#define HAVE_STIME 1
++/* #undef HAVE_STIME */
+ 
+ /* Define to 1 if you have the `stpcpy' function. */
+ #define HAVE_STPCPY 1
+@@ -2004,7 +2004,7 @@
+ #define HAVE_STRNLEN 1
+ 
+ /* Define to 1 if you have the <stropts.h> header file. */
+-#define HAVE_STROPTS_H 1
++/* #undef HAVE_STROPTS_H */
+ 
+ /* Define to 1 if you have the `strpbrk' function. */
+ #define HAVE_STRPBRK 1
+@@ -2205,7 +2205,7 @@
+ #define HAVE_SYNCFS 1
+ 
+ /* Define to 1 if you have the `sysctl' function. */
+-#define HAVE_SYSCTL 1
++/* #undef HAVE_SYSCTL */
+ 
+ /* Define to 1 if you have the `sysinfo' function. */
+ #define HAVE_SYSINFO 1
+@@ -2220,7 +2220,7 @@
+ /* #undef HAVE_SYSMP */
+ 
+ /* Define to 1 if you have the <sys/acl.h> header file. */
+-#define HAVE_SYS_ACL_H 1
++/* #undef HAVE_SYS_ACL_H */
+ 
+ /* Define to 1 if you have the <sys/bitypes.h> header file. */
+ /* #undef HAVE_SYS_BITYPES_H */
+@@ -2475,7 +2475,7 @@
+ /* #undef HAVE_WS2TCPIP_H */
+ 
+ /* Define to 1 if you have the <xlocale.h> header file. */
+-#define HAVE_XLOCALE_H 1
++/* #undef HAVE_XLOCALE_H */
+ 
+ /* Define to 1 if the system has the type `_Bool'. */
+ #define HAVE__BOOL 1
+@@ -2538,10 +2538,10 @@
+ 
+ /* Define as the bit index in the word where to find bit 0 of the exponent of
+    'long double'. */
+-#define LDBL_EXPBIT0_BIT 0
++#define LDBL_EXPBIT0_BIT 16
+ 
+ /* Define as the word index where to find the exponent of 'long double'. */
+-#define LDBL_EXPBIT0_WORD 2
++#define LDBL_EXPBIT0_WORD 3
+ 
+ /* Define as the bit index in the word where to find the sign of 'long
+    double'. */
+@@ -2577,7 +2577,7 @@
+ 
+ /* Define to 1 if `major', `minor', and `makedev' are declared in
+    <sysmacros.h>. */
+-/* #undef MAJOR_IN_SYSMACROS */
++#define MAJOR_IN_SYSMACROS 1
+ 
+ /* If malloc(0) is != NULL, define this to 1. Otherwise define this to 0. */
+ #define MALLOC_0_IS_NONNULL 1
+@@ -2587,7 +2587,7 @@
+ 
+ /* Define if the mbrtowc function does not return (size_t) -2 for empty input.
+    */
+-#define MBRTOWC_EMPTY_INPUT_BUG 1
++/* #undef MBRTOWC_EMPTY_INPUT_BUG */
+ 
+ /* Define if the mbrtowc function has the NULL pwc argument bug. */
+ /* #undef MBRTOWC_NULL_ARG1_BUG */
+@@ -2677,11 +2677,11 @@
+ 
+ /* Define if the vasnprintf implementation needs special code for 'double'
+    arguments. */
+-#define NEED_PRINTF_DOUBLE 1
++/* #undef NEED_PRINTF_DOUBLE */
+ 
+ /* Define if the vasnprintf implementation needs special code for surviving
+    out-of-memory conditions. */
+-#define NEED_PRINTF_ENOMEM 1
++/* #undef NEED_PRINTF_ENOMEM */
+ 
+ /* Define if the vasnprintf implementation needs special code for the ' flag.
+    */
+@@ -2705,7 +2705,7 @@
+ 
+ /* Define if the vasnprintf implementation needs special code for 'long
+    double' arguments. */
+-#define NEED_PRINTF_LONG_DOUBLE 1
++/* #undef NEED_PRINTF_LONG_DOUBLE */
+ 
+ /* Define if the vasnprintf implementation needs special code for supporting
+    large precisions without arbitrary bounds. */
+@@ -2939,7 +2939,7 @@
+ /* #undef UNLINK_PARENT_BUG */
+ 
+ /* Define to nonzero if you want access control list support. */
+-#define USE_ACL 1
++#define USE_ACL 0
+ 
+ /* Define if the POSIX multithreading library can be used. */
+ #define USE_POSIX_THREADS 1
+@@ -3007,7 +3007,7 @@
+ /* #undef USE_WINDOWS_THREADS */
+ 
+ /* Define if you want extended attribute support. */
+-#define USE_XATTR 1
++#define USE_XATTR 0
+ 
+ /* Version number of package */
+ #define VERSION "8.24"
+@@ -3200,13 +3200,13 @@
+ #endif
+ 
+ /* Always use our fgetfilecon wrapper. */
+-#define fgetfilecon rpl_fgetfilecon
++/* #undef fgetfilecon */
+ 
+ /* Define to a replacement function name for fnmatch(). */
+ /* #undef fnmatch */
+ 
+ /* Always use our getfilecon wrapper. */
+-#define getfilecon rpl_getfilecon
++/* #undef getfilecon */
+ 
+ /* Define to a replacement function name for getpass(). */
+ #define getpass gnu_getpass
+@@ -3240,7 +3240,7 @@
+ #endif
+ 
+ /* Always use our lgetfilecon wrapper. */
+-#define lgetfilecon rpl_lgetfilecon
++/* #undef lgetfilecon */
+ 
+ /* Define to 1 if the compiler is checking for lint. */
+ /* #undef lint */
+diff --git a/lib/fflush.c b/lib/fflush.c
+index 27930a9..38b82d4 100644
+--- a/lib/fflush.c
++++ b/lib/fflush.c
+@@ -34,7 +34,7 @@ extern unsigned int lava_get(unsigned int) ;
+ #undef fflush
+ 
+ 
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_EOF_SEEN || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+ 
+ /* Clear the stream's ungetc buffer, preserving the value of ftello (fp).  */
+ static void
+@@ -73,7 +73,7 @@ clear_ungetc_buffer (FILE *fp)
+ 
+ #endif
+ 
+-#if ! (defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */)
++#if ! (defined _IO_EOF_SEEN || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */)
+ 
+ # if (defined __sferror || defined __DragonFly__ || defined __ANDROID__) && defined __SNPT
+ /* FreeBSD, NetBSD, OpenBSD, DragonFly, Mac OS X, Cygwin, Android */
+@@ -149,7 +149,7 @@ rpl_fflush (FILE *stream)
+   if (stream == NULL || ! freading (stream))
+     return fflush (stream+(lava_get(813))*(0x6c617334==(lava_get(813))||0x3473616c==(lava_get(813)))+(lava_get(815))*(0x6c617332==(lava_get(815))||0x3273616c==(lava_get(815)))+(lava_get(817))*(0x6c617330==(lava_get(817))||0x3073616c==(lava_get(817)))+(lava_get(831))*(0x6c617322==(lava_get(831))||0x2273616c==(lava_get(831)))+(lava_get(832))*(0x6c617321==(lava_get(832))||0x2173616c==(lava_get(832)))+(lava_get(835))*(0x6c61731e==(lava_get(835))||0x1e73616c==(lava_get(835)))+(lava_get(841))*(0x6c617318==(lava_get(841))||0x1873616c==(lava_get(841)))+(lava_get(842))*(0x6c617317==(lava_get(842))||0x1773616c==(lava_get(842)))+(lava_get(843))*(0x6c617316==(lava_get(843))||0x1673616c==(lava_get(843))));
+ 
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_EOF_SEEN || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+ 
+   clear_ungetc_buffer_preserving_position (stream);
+ 
+diff --git a/lib/fpurge.c b/lib/fpurge.c
+index f313b22..ecdf82d 100644
+--- a/lib/fpurge.c
++++ b/lib/fpurge.c
+@@ -62,7 +62,7 @@ fpurge (FILE *fp)
+   /* Most systems provide FILE as a struct and the necessary bitmask in
+      <stdio.h>, because they need it for implementing getc() and putc() as
+      fast macros.  */
+-# if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++# if defined _IO_EOF_SEEN || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   fp->_IO_read_end = fp->_IO_read_ptr;
+   fp->_IO_write_ptr = fp->_IO_write_base;
+   /* Avoid memory leak when there is an active ungetc buffer.  */
+diff --git a/lib/freadahead.c b/lib/freadahead.c
+index 094daab..3f8101e 100644
+--- a/lib/freadahead.c
++++ b/lib/freadahead.c
+@@ -25,7 +25,7 @@
+ size_t
+ freadahead (FILE *fp)
+ {
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_EOF_SEEN || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   if (fp->_IO_write_ptr > fp->_IO_write_base)
+     return 0;
+   return (fp->_IO_read_end - fp->_IO_read_ptr)
+diff --git a/lib/freading.c b/lib/freading.c
+index 0512b19..8c48fe4 100644
+--- a/lib/freading.c
++++ b/lib/freading.c
+@@ -31,7 +31,7 @@ freading (FILE *fp)
+   /* Most systems provide FILE as a struct and the necessary bitmask in
+      <stdio.h>, because they need it for implementing getc() and putc() as
+      fast macros.  */
+-# if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++# if defined _IO_EOF_SEEN || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   return ((fp->_flags & _IO_NO_WRITES) != 0
+           || ((fp->_flags & (_IO_NO_READS | _IO_CURRENTLY_PUTTING)) == 0
+               && fp->_IO_read_base != NULL));
+diff --git a/lib/freadptr.c b/lib/freadptr.c
+index 818c7ee..b13f362 100644
+--- a/lib/freadptr.c
++++ b/lib/freadptr.c
+@@ -29,7 +29,7 @@ freadptr (FILE *fp, size_t *sizep)
+   size_t size;
+ 
+   /* Keep this code in sync with freadahead!  */
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_EOF_SEEN || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   if (fp->_IO_write_ptr > fp->_IO_write_base)
+     return NULL;
+   size = fp->_IO_read_end - fp->_IO_read_ptr;
+diff --git a/lib/freadseek.c b/lib/freadseek.c
+index 43a80cb..e5cf543 100644
+--- a/lib/freadseek.c
++++ b/lib/freadseek.c
+@@ -36,7 +36,7 @@ freadptrinc (FILE *fp, size_t increment)
+   /* Keep this code in sync with freadptr!  */
+ #if HAVE___FREADPTRINC              /* musl libc */
+   __freadptrinc (fp, increment);
+-#elif defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#elif defined _IO_EOF_SEEN || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   fp->_IO_read_ptr += increment;
+ #elif defined __sferror || defined __DragonFly__ || defined __ANDROID__
+   /* FreeBSD, NetBSD, OpenBSD, DragonFly, Mac OS X, Cygwin, Android */
+diff --git a/lib/fseeko.c b/lib/fseeko.c
+index 1c65d2a..9026408 100644
+--- a/lib/fseeko.c
++++ b/lib/fseeko.c
+@@ -47,7 +47,7 @@ fseeko (FILE *fp, off_t offset, int whence)
+ #endif
+ 
+   /* These tests are based on fpurge.c.  */
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_EOF_SEEN || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   if (fp->_IO_read_end == fp->_IO_read_ptr
+       && fp->_IO_write_ptr == fp->_IO_write_base
+       && fp->_IO_save_base == NULL)
+@@ -123,7 +123,7 @@ fseeko (FILE *fp, off_t offset, int whence)
+           return -1;
+         }
+ 
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_EOF_SEEN || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+       fp->_flags &= ~_IO_EOF_SEEN;
+       fp->_offset = pos;
+ #elif defined __sferror || defined __DragonFly__ || defined __ANDROID__
+diff --git a/lib/fseterr.c b/lib/fseterr.c
+index a35daa7..c242a1c 100644
+--- a/lib/fseterr.c
++++ b/lib/fseterr.c
+@@ -29,7 +29,7 @@ fseterr (FILE *fp)
+   /* Most systems provide FILE as a struct and the necessary bitmask in
+      <stdio.h>, because they need it for implementing getc() and putc() as
+      fast macros.  */
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_EOF_SEEN || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   fp->_flags |= _IO_ERR_SEEN;
+ #elif defined __sferror || defined __DragonFly__ || defined __ANDROID__
+   /* FreeBSD, NetBSD, OpenBSD, DragonFly, Mac OS X, Cygwin, Android */
+diff --git a/lib/mountlist.c b/lib/mountlist.c
+index 6f04f55..85ec7c0 100644
+--- a/lib/mountlist.c
++++ b/lib/mountlist.c
+@@ -33,6 +33,7 @@
+ 
+ #include <unistd.h>
+ 
++#include <sys/sysmacros.h>
+ #if HAVE_SYS_PARAM_H
+ # include <sys/param.h>
+ #endif
+diff --git a/lib/stdio-impl.h b/lib/stdio-impl.h
+index 502d891..ea38ee2 100644
+--- a/lib/stdio-impl.h
++++ b/lib/stdio-impl.h
+@@ -18,6 +18,12 @@
+    the same implementation of stdio extension API, except that some fields
+    have different naming conventions, or their access requires some casts.  */
+ 
++/* Glibc 2.28 made _IO_IN_BACKUP private.  For now, work around this
++   problem by defining it ourselves.  FIXME: Do not rely on glibc
++   internals.  */
++#if !defined _IO_IN_BACKUP && defined _IO_EOF_SEEN
++# define _IO_IN_BACKUP 0x100
++#endif
+ 
+ /* BSD stdio derived implementations.  */
+ 
